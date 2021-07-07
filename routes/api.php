@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QiandaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/setTops',[QiandaoController::class,'setTops']);
+Route::get('/setUsers',[QiandaoController::class,'setUsers']);
+Route::get('/cleanTable',[QiandaoController::class,'cleanTable']);
+
+//Route::get('/getSigns',[QiandaoController::class,'getSigns']);
+Route::get('/sign',[QiandaoController::class,'sign']);
